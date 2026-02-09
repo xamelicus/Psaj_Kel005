@@ -91,46 +91,44 @@ nav {
    3. HERO SECTION (BERANDA)
    ======================================================= */
 .hero-kelompok {
-    height: 100vh; /* Tinggi memenuhi 100% layar */
-    /* Membuat gradasi warna dari Steel Blue ke Biru Gelap */
-    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
+    height: 100vh;
+    /* Perbaikan: Gradasi dibuat transparan (0.6) agar gambar dibelakangnya terlihat */
+    background: linear-gradient(135deg, rgba(70, 130, 180, 0.7), rgba(44, 62, 80, 0.8)),
+                url('background.jpeg'); 
+    background-size: cover;      /* Gambar menutupi seluruh area */
+    background-position: center; /* Gambar fokus di tengah */
+    background-attachment: fixed; /* Efek parallax (opsional, keren!) */
     display: flex;
-    justify-content: center; /* Konten di tengah horizontal */
-    align-items: center; /* Konten di tengah vertikal */
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: var(--text-white);
-    padding-top: 60px; /* Kompensasi karena header yang fixed */
+    padding-top: 60px;
+}
+
+.hero-overlay {
+    padding: 20px;
+    max-width: 800px;
 }
 
 .hero-overlay h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: clamp(2.5rem, 8vw, 4rem); /* Ukuran teks responsif */
+    margin-bottom: 15px;
     font-weight: 700;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Agar teks lebih 'timbul' */
 }
 
-.hero-overlay p {
+.hero-subtitle {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero-desc {
     font-size: 1.2rem;
     opacity: 0.9;
-}
-
-/* Gaya Tombol (Button) */
-.btn-cek {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 35px;
-    background-color: var(--text-white);
-    color: var(--primary-color);
-    text-decoration: none;
-    border-radius: 50px; /* Membuat tombol lonjong */
-    font-weight: 600;
-    transition: var(--transition);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn-cek:hover {
-    background-color: var(--hover-color);
-    color: var(--text-white); /* Warna tukeran saat hover */
-    transform: translateY(-3px); /* Efek tombol naik sedikit */
 }
 
 /* =======================================================
